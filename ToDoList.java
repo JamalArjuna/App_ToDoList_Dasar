@@ -88,13 +88,15 @@ public class ToDoList {
 
     private static void testRemoveToDo(){
 
-        addToDo("satu");
-        addToDo("dua");
-        addToDo("tiga");
-        addToDo("empat");
-        addToDo("lima");
-        addToDo("enam");
-        addToDo("tujuh");
+        addToDo("todo satu");
+        addToDo("todo dua");
+        addToDo("todo tiga");
+        addToDo("todo empat");
+        addToDo("todo lima");
+        addToDo("todo enam");
+        addToDo("todo tujuh");
+        addToDo("todo delapan");
+        addToDo("todo sembilan");
 
         var hasil = deleteToDo(20);
         System.out.println(hasil);
