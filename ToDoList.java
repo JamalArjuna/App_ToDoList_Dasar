@@ -5,7 +5,7 @@ public class ToDoList {
     private static Scanner InputUser = new Scanner(System.in);
 
     public static void main(String[] args) {
-        testRemoveToDo();
+        testInput();
     }
 
     // Menampilkan ToDo list
@@ -109,6 +109,16 @@ public class ToDoList {
 
         showToDoList();
 
+    }
+    // Input To Do List
+    private static String input(){
+        System.out.print("Tambahkan To Do list: ");
+        String dataInput = InputUser.nextLine();
+        return dataInput;
+    }
+
+    private static void testInput(){
+        System.out.println("To Do LIst yang dimasukkan adalah: " + input());
     }
     // UI Show Todo list
     private static void viewShowToDo(){
