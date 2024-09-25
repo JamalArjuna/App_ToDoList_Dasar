@@ -5,11 +5,12 @@ public class ToDoList {
     private static Scanner InputUser = new Scanner(System.in);
 
     public static void main(String[] args) {
-        testInput();
+        testViewShowToDo();
     }
 
     // Menampilkan ToDo list
     private static void showToDoList(){
+        System.out.println("TO DO LIST HARI INI");
         for (var i = 0; i < Activity.length; i++){
             var Todo = Activity[i];
             var no = i + 1;
@@ -112,7 +113,7 @@ public class ToDoList {
     }
     // Input To Do List
     private static String input(){
-        System.out.print("Tambahkan To Do list: ");
+        System.out.print("Input : ");
         String dataInput = InputUser.nextLine();
         return dataInput;
     }
@@ -122,8 +123,35 @@ public class ToDoList {
     }
     // UI Show Todo list
     private static void viewShowToDo(){
+        while (true){
+            showToDoList();
+            System.out.println("MENU: ");
 
+            System.out.println("1. Tambah To Do List");
+            System.out.println("2. Hapus To Do List");
+            System.out.println("3. Keluar");
+
+            if (input().equals("1")){
+                viewAddToDo();
+            } else if (input().equals("2")) {
+                viewDeleteToDo();
+            } else if (input().equals("3")) {
+                break;
+            } else {
+                System.out.println("Input yang Kamu masukkan salah!!!");
+            }
+        }
     }
+
+    private static void testViewShowToDo(){
+        addToDo("Makan");
+        addToDo("Mandi");
+        addToDo("Belajar Programming");
+        addToDo("Kuliah");
+
+        viewShowToDo();
+    }
+
     // UI Add Todo list
     private static void viewAddToDo(){
 
