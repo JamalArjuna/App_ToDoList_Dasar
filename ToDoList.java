@@ -5,7 +5,7 @@ public class ToDoList {
     private static Scanner InputUser = new Scanner(System.in);
 
     public static void main(String[] args) {
-        testViewShowToDo();
+        testViewAddToDo();
     }
 
     // Menampilkan ToDo list
@@ -154,7 +154,27 @@ public class ToDoList {
 
     // UI Add Todo list
     private static void viewAddToDo(){
+        System.out.println("TAMBAHKAN TO DO LIST");
 
+        System.out.print("Masukkan To Do list(Tekan x jika batal) : ");
+        var addToDo = InputUser.nextLine();
+
+        if (addToDo.equals("x")){
+            // kembali
+        } else {
+            addToDo(addToDo);
+        }
+    }
+
+    private static void testViewAddToDo(){
+        addToDo("Makan");
+        addToDo("Tidur");
+        addToDo("Belanja");
+        addToDo("Kerja");
+        addToDo("Belajar");
+        viewAddToDo();
+
+        showToDoList();
     }
     // UI Delete Todo list
     private static void viewDeleteToDo(){
