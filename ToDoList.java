@@ -6,6 +6,8 @@ public class ToDoList {
 
     public static void main(String[] args) {
         viewShowToDo();
+
+        //testViewEditToDo();
     }
 
     // Menampilkan ToDo list
@@ -129,13 +131,16 @@ public class ToDoList {
 
             System.out.println("1. Tambah To Do List");
             System.out.println("2. Hapus To Do List");
-            System.out.println("3. Keluar");
+            System.out.println("3. Edit To Do List");
+            System.out.println("4. Berhenti");
 
             if (input().equals("1")){
                 viewAddToDo();
             } else if (input().equals("2")) {
                 viewDeleteToDo();
             } else if (input().equals("3")) {
+                viewEditToDo();
+            } else if (input().equals("4")) {
                 break;
             } else {
                 System.out.println("Input yang Kamu masukkan salah!!!");
@@ -200,6 +205,46 @@ public class ToDoList {
 
         viewDeleteToDo();
 
+        showToDoList();
+    }
+
+
+    private static void viewEditToDo(){
+        System.out.println("EDIT TO DO LIST");
+
+        System.out.print("Masukkan To Do List (Tekan 0 jika batal) : ");
+        String editToDo = InputUser.nextLine();
+        System.out.print("Masukkan Nomor To Do Yang Mau diganti (Tekan 0 jika batal) : ");
+        int editNumberToDo = InputUser.nextInt();
+
+        if (editToDo  == "0" || editNumberToDo == 0){
+
+        } else {
+            EditToDo(editNumberToDo, editToDo);
+        }
+    }
+
+    private static Boolean EditToDo(Integer Angka, String todo){
+        System.out.println("EDIT TO DO LIST");
+
+        if ((Angka - 1) >= Activity.length){
+            return false;
+        } else if (Activity[Angka - 1] == null) {
+            return false;
+        }else {
+            Activity[Angka - 1] = todo;;
+        }
+        return true;
+    }
+
+    private static void testViewEditToDo(){
+        addToDo("Makan");
+        addToDo("Tidur");
+        addToDo("Mandi");
+        addToDo("Kelas");
+
+        showToDoList();
+        viewEditToDo();
         showToDoList();
     }
 }
