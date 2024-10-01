@@ -5,6 +5,8 @@ public class ToDoList {
     private static Scanner InputUser = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        // MAIN PROGRAM
         viewShowToDo();
 
         //testViewEditToDo();
@@ -135,15 +137,15 @@ public class ToDoList {
             System.out.println("4. Berhenti");
 
             if (input().equals("1")){
-                viewAddToDo();
+                viewAddToDo(); // Masuk ke dalam Method/Halaman ViewAddToDo
             } else if (input().equals("2")) {
-                viewDeleteToDo();
+                viewDeleteToDo(); // Masuk ke Method/Halaman ViewDeleteToDo
             } else if (input().equals("3")) {
-                viewEditToDo();
+                viewEditToDo(); // Masuk ke Method/Halaman ViewEditToDo
             } else if (input().equals("4")) {
-                break;
+                break; // Program berhenti
             } else {
-                System.out.println("Input yang Kamu masukkan salah!!!");
+                System.out.println("Input yang Kamu masukkan salah!!!"); // Inputan salah
             }
         }
     }
@@ -162,12 +164,12 @@ public class ToDoList {
         System.out.println("TAMBAHKAN TO DO LIST");
 
         System.out.print("Masukkan To Do list(Tekan x jika batal) : ");
-        var addToDo = InputUser.nextLine();
+        var addToDo = InputUser.nextLine(); // Memasukkan Sebuah Inputan todo kita
 
         if (addToDo.equals("x")){
             // kembali
         } else {
-            addToDo(addToDo);
+            addToDo(addToDo); // Masuk kedalam method AddToDo
         }
     }
 
@@ -186,7 +188,7 @@ public class ToDoList {
         System.out.println("HAPUS TO DO LIST");
 
         System.out.print("Masukkan To Do list Yang Mau Dihapus (Tekan 0 jika batal) : ");
-        int deleteToDo = InputUser.nextInt();
+        int deleteToDo = InputUser.nextInt(); // Input Index ke berapa yang mau dihapus
 
         if (deleteToDo == 0){
 
@@ -212,15 +214,15 @@ public class ToDoList {
     private static void viewEditToDo(){
         System.out.println("EDIT TO DO LIST");
 
-        System.out.print("Masukkan To Do List (Tekan 0 jika batal) : ");
-        String editToDo = InputUser.nextLine();
         System.out.print("Masukkan Nomor To Do Yang Mau diganti (Tekan 0 jika batal) : ");
-        int editNumberToDo = InputUser.nextInt();
+        int editNumberToDo = InputUser.nextInt(); // Memasukkan Todo List yang mau di ganti
+        System.out.print("Masukkan To Do List (Tekan 0 jika batal) : ");
+        String editToDo = InputUser.nextLine(); // Meamasukkan Input Todo List yang mau kita ganti
 
         if (editToDo  == "0" || editNumberToDo == 0){
-
+            // Pengecekan apakah salah satu input berupa 0, jika true maka gagal dan kembali ke halaman view utama
         } else {
-            EditToDo(editNumberToDo, editToDo);
+            EditToDo(editNumberToDo, editToDo); // jika tidak ada yang 0 maka masuk ke method EditToDo
         }
     }
 
@@ -228,11 +230,11 @@ public class ToDoList {
         System.out.println("EDIT TO DO LIST");
 
         if ((Angka - 1) >= Activity.length){
-            return false;
+            return false; // Pengecekan apakah input melewati batas dari panjang array
         } else if (Activity[Angka - 1] == null) {
-            return false;
+            return false; // Pengecekan apakah input berupa null di dalam Index
         }else {
-            Activity[Angka - 1] = todo;;
+            Activity[Angka - 1] = todo; // Pendeklarasian todo yang mau kita ganti
         }
         return true;
     }
